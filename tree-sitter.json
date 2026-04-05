@@ -6,16 +6,15 @@
       "camelcase": "no",
       "title": "flatbuffer",
       "scope": "source.flatbuffer",
-      "file-types": [
-        ".fbs"
-      ],
+      "file-types": ["fbs"],
       "injection-regex": "^flatbuffer$",
+      "highlights": "queries/highlights.scm",
       "class-name": "TreeSitterFlatbuffer"
     }
   ],
   "metadata": {
-    "version": "0.1.0",
     "license": "MIT",
+    "version": "0.1.0",
     "description": "A parser for google flatbuffers",
     "authors": [
       {
