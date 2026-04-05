@@ -9,7 +9,7 @@ namespace hello;
 
 (source_file
     (namespace_declaration
-        name: (identifier)))
+        name: (namespace_identifier)))
 
 ================================================
 Single lowercase character namespace_declaration 
@@ -23,18 +23,35 @@ namespace i;
 
 (source_file
     (namespace_declaration
-        name: (identifier)))
+        name: (namespace_identifier)))
 
 
 ===============
 Namespace error
-:fail-fast
 :error
 ===============
 
 namespace ;
 
------------ 
+-------------
 
+===============================================
+Namespace declaration single uppercase character
+===============================================
 
+namespace I;
 
+-----------------------
+
+(source_file
+    (namespace_declaration
+        name: (namespace_identifier)))
+
+=================================
+Namespace start with number declaration error
+:error
+=================================
+
+namespace 9;
+
+-------------------------
