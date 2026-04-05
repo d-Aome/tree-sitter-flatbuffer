@@ -1,0 +1,40 @@
+===========
+Basic Namespace declaration
+===========
+
+
+namespace hello;
+
+------------
+
+(source_file
+    (namespace_declaration
+        name: (identifier)))
+
+================================================
+Single lowercase character namespace_declaration 
+================================================
+
+
+
+namespace i; 
+
+------------
+
+(source_file
+    (namespace_declaration
+        name: (identifier)))
+
+
+===============
+Namespace error
+:fail-fast
+:error
+===============
+
+namespace ;
+
+----------- 
+
+
+
