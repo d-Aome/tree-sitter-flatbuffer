@@ -1,5 +1,26 @@
 [
   {
+    "type": "attribute_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "attribute_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "attribute_identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "namespace_declaration",
     "named": true,
     "fields": {
@@ -8,12 +29,17 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "namespace_identifier",
             "named": true
           }
         ]
       }
     }
+  },
+  {
+    "type": "namespace_identifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -24,6 +50,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "attribute_declaration",
+          "named": true
+        },
         {
           "type": "namespace_declaration",
           "named": true
@@ -36,8 +66,8 @@
     "named": false
   },
   {
-    "type": "identifier",
-    "named": true
+    "type": "attribute",
+    "named": false
   },
   {
     "type": "namespace",
