@@ -9,11 +9,17 @@
   },
   "funding": "",
   "license": "MIT",
-  "author": {
-    "name": "David Montiel",
-    "email": "davidm0ntiel@proton.me",
-    "url": ""
-  },
+  "author": "David Montiel <davidm0ntiel@proton.me>",
+  "tree-sitter": [
+    {
+      "scope": "source.flatbuffer",
+      "file-types": [
+        "fbs"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "^flatbuffer$"
+    }
+  ],
   "main": "bindings/node",
   "types": "bindings/node",
   "keywords": [
@@ -37,9 +43,13 @@
     "node-gyp-build": "^4.8.4"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0",
     "prebuildify": "^6.0.1",
     "tree-sitter": "^0.25.0",
-    "tree-sitter-cli": "^0.26.3"
+    "tree-sitter-cli": "^0.26.3",
+    "typescript-eslint": "^8.58.0"
   },
   "peerDependencies": {
     "tree-sitter": "^0.25.0"
@@ -54,5 +64,12 @@
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "bugs": {
+    "url": "https://github.com/d-aome/tree-sitter-flatbuffer/issues"
+  },
+  "homepage": "https://github.com/d-aome/tree-sitter-flatbuffer#readme"
 }
