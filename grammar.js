@@ -27,10 +27,7 @@ export default grammar({
     namespace_declaration: ($) =>
       seq(
         'namespace',
-        field(
-          'ident',
-          seq($.identifier, repeat(optional(seq('.', $.identifier)))),
-        ),
+        field('ident', seq($.identifier, repeat(seq('.', $.identifier)))),
         ';',
       ),
 
@@ -40,14 +37,15 @@ export default grammar({
         field('name', choice($.identifier, seq('"', $.identifier, '"'))),
         ';',
       ),
-    identifer: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
+
+    identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
     /* digits */
 
     /* Integers */
     decimal_integer_constant: () => /[-+]?[\d]+/,
     hex_integer_constant: () => new RegExp(`[-+]?0[xX][${h_digit}]+`),
 
-    // EBND:dec_integer_constant | hex_integer_constant
+    // EBNF:dec_integer_constant | hex_integer_constant
     integer_constant: ($) =>
       choice($.decimal_integer_constant, $.hex_integer_constant),
   },
