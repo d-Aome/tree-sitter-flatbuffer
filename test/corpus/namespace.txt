@@ -1,42 +1,18 @@
 ===========
-Basic Namespace declaration
+Simple Declaration
 ===========
 
-
-namespace hello;
-
-------------
-
-(source_file
-    (namespace_declaration
-        name: (namespace_identifier)))
-
-================================================
-Single lowercase character namespace_declaration 
-================================================
-
-
-
-namespace i; 
+namespace Hello;
 
 ------------
 
 (source_file
     (namespace_declaration
-        name: (namespace_identifier)))
+        ident: (identifier)))
 
-
-===============
-Namespace error
-:error
-===============
-
-namespace ;
-
--------------
 
 ===============================================
-Namespace declaration single uppercase character
+Single Character 
 ===============================================
 
 namespace I;
@@ -45,13 +21,91 @@ namespace I;
 
 (source_file
     (namespace_declaration
-        name: (namespace_identifier)))
+        ident: (identifier)))
+
+=================================================
+Namespace Declaration: _ prefix
+=================================================
+
+namespace _Hello;
+
+-------------------------------------------------
+
+
+(source_file 
+    (namespace_declaration
+        ident: (identifier)))
+
+
+==================================================
+Dotted Namespaces
+==================================================
+
+namespace Hello.Myname;
+
+-------------------------------
+(source_file 
+    (namespace_declaration
+        ident: (identifier)
+        ident: (identifier)))
+
+==================================================
+Chained Dotted Namespaces
+==================================================
+
+namespace Animal.Vertebrates.Warm_Blooded.Mammals.Pigs;
+
+-------------------------------
+(source_file 
+    (namespace_declaration
+        ident: (identifier)
+        ident: (identifier)
+        ident: (identifier)
+        ident: (identifier)
+        ident: (identifier)))
+
+
+==================================================
+Single Character Dotted
+==================================================
+
+namespace H.O.A;
+
+--------------------------------------------------
+(source_file 
+    (namespace_declaration
+        ident: (identifier)
+        ident: (identifier)
+        ident: (identifier)))
 
 =================================
-Namespace start with number declaration error
+Error: Typo
+:error
+=================================
+namesapce Hello;
+---------------------------------
+
+=================================
+Error: Start with number
 :error
 =================================
 
-namespace 9;
+namespace 42AnswertoLife;
 
 -------------------------
+===============
+Error: Missing Identifier
+:error
+===============
+
+namespace ;
+
+-------------
+==========================
+Error: Mising Semi-colon
+:error
+==========================
+
+namespace Hello
+
+--------------------
