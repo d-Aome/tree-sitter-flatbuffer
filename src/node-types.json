@@ -4,42 +4,40 @@
     "named": true,
     "fields": {
       "name": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "attribute_identifier",
+            "type": "\"",
+            "named": false
+          },
+          {
+            "type": "identifier",
             "named": true
           }
         ]
       }
     }
-  },
-  {
-    "type": "attribute_identifier",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "namespace_declaration",
     "named": true,
     "fields": {
-      "name": {
-        "multiple": false,
+      "ident": {
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "namespace_identifier",
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "identifier",
             "named": true
           }
         ]
       }
     }
-  },
-  {
-    "type": "namespace_identifier",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "source_file",
@@ -62,12 +60,24 @@
     }
   },
   {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
   {
     "type": "attribute",
     "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
   },
   {
     "type": "namespace",
